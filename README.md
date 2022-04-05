@@ -1,3 +1,15 @@
+## Travel Guide
+## Salesforce Experience Cloud App
+
+### Home Page
+![screenOne](https://user-images.githubusercontent.com/64141913/161824251-67f16963-d925-4d25-897f-5efc9e8cf6a4.png)
+
+### Bookings Page
+![screenTwo](https://user-images.githubusercontent.com/64141913/161824263-8ff5da42-1f06-4ee4-9430-341ebc262cca.png)
+
+### Schema Builder
+![screenThree](https://user-images.githubusercontent.com/64141913/161824266-28b830f8-bf38-4583-907a-66818144fb08.png)
+
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
