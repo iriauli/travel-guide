@@ -1,0 +1,92 @@
+<template>
+  <template if:true={showErrorMessage}>
+    <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+      <span class="slds-assistive-text">error</span>
+      <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+        title="Description of icon when needed">
+        <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+        </svg>
+      </span>
+      <h2>Please confirm start and end dates.
+      </h2>
+      <div class="slds-notify__close">
+        <button onclick={closeErrorMessage}
+          class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+    </div>
+  </template>
+  <section>
+    <div class="hotels">
+      <template if:true={reshotels}>
+        <template for:each={reshotels.data} for:item="reshotel">
+          <lightning-layout-item key={reshotel.Name} size="3" class="slds-var-p-around_x-small">
+            <div class="reserved-list">
+              <div class="hotel-info">
+                <div class="book">
+                  <h1>{reshotel.Hotel_Name__c}</h1>
+                  <div class="buttons">
+                    <lightning-button label={buttonLabel} slot="actions" onclick={editReserve} data-id={reshotel.Id}>
+                    </lightning-button>
+                    <lightning-button label="Cancel" slot="actions" onclick={cancelModal}></lightning-button>
+                  </div>
+                </div>
+                <template if:true={openModal}>
+                  <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                      <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium slds-hyphenate">{header}</h2>
+                      </header>
+                      <div class="slds-modal__content slds-p-around_medium">
+                        <h2 style="text-align: center;">{text}</h2>
+                      </div>
+                      <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_brand" onclick={closeModal}>No</button>
+                        <button class="slds-button slds-button_brand" data-id={reshotel.Id}
+                          onclick={cancelReserve}>Yes</button>
+                      </footer>
+                    </div>
+                  </section>
+                  <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+                <div class="details">
+                  <h2><span>Reserve: </span>{reshotel.Name}</h2>
+                  <h2><span>Days: </span>{reshotel.Days__c}</h2>
+                  <h2><span>Persons: </span>{reshotel.Person__c}</h2>
+                  <h2><span>Persons: </span>{reshotel.Room__c}</h2>
+                  <h2><span>Price: </span>
+                    <lightning-formatted-number value={reshotel.Price__c} format-style="currency" currency-code="USD">
+                    </lightning-formatted-number>
+                  </h2>
+                  <h2><span>Total Price: </span>
+                    <lightning-formatted-number value={reshotel.Total_Price__c} format-style="currency"
+                      currency-code="USD"></lightning-formatted-number>
+                  </h2>
+                </div>
+                <div class="calendar">
+                  <div class="dates">
+                    <lightning-input type="date" data-id="startDate" onchange={startDateHandler}
+                      value={reshotel.Start_Date__c} name="input1" label="Start Date" readonly={editMode}>
+                    </lightning-input>
+                    <lightning-input type="date" data-id="endDate" onchange={endDateHandler}
+                      value={reshotel.End_Date__c} name="input2" label="End Date" readonly={editMode}>
+                    </lightning-input>
+                  </div>
+                </div>
+              </div>
+              <div class="errorMessage" if:true={areDetailsVisible}>
+                <h2>All fields are required</h2>
+              </div>
+            </div>
+          </lightning-layout-item>
+        </template>
+      </template>
+    </div>
+  </section>
+</template>

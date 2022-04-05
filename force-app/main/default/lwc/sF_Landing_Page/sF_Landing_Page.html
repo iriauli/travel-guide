@@ -1,0 +1,20 @@
+<template>
+  <section>
+    <lightning-layout multiple-rows="true" pull-to-boundary="small">
+      <template for:each={cities.data} for:item="city">
+        <lightning-layout-item key={city.Name} size="3" class="slds-var-p-around_x-small">
+          <div class="city-card">
+            <div class="city-info" >
+              <div class="gradient">
+                <div class="city-name" onclick={cityDetailsClick} data-id={city.Id}>
+                  <h1 onclick={cityDetailsClick} data-id={city.Id}>{city.Name}</h1>
+                </div>
+              </div>
+              <img src={city.Img__c} class="image">
+            </div>
+          </div>
+        </lightning-layout-item>
+      </template>
+    </lightning-layout>
+  </section>
+</template>

@@ -1,0 +1,10 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+p {
+    letter-spacing: 2px;
+}

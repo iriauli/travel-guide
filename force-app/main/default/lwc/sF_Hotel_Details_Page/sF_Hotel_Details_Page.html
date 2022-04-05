@@ -1,0 +1,124 @@
+<template>
+  <template if:true={showSuccessMessage}>
+    <div class="slds-notify slds-notify_alert" role="alert">
+      <span class="slds-assistive-text">error</span>
+      <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+        title="Description of icon when needed">
+      </span>
+      <h2>You have successfully booked a hotel. Booking details are sent to your email. <span
+          onclick={navigateToBookingsPage}> See Details</span>
+      </h2>
+      <div class="slds-notify__close">
+        <button onclick={closeSuccessMessage}
+          class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+    </div>
+  </template>
+  <template if:true={showErrorMessage}>
+    <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+      <span class="slds-assistive-text">error</span>
+      <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+        title="Description of icon when needed">
+        <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+        </svg>
+      </span>
+      <h2>The dates you entered are incorrect, please enter the correct dates.
+      </h2>
+      <div class="slds-notify__close">
+        <button onclick={closeErrorMessage}
+          class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+    </div>
+  </template>
+  <section>
+    <div class="hotels">
+      <template if:true={hotel}>
+        <lightning-layout-item key={hotel.Name}>
+          <div class="hotel-card">
+            <img src={hotel.Img__c} class="hotel-image">
+            <div class="hotel-info">
+              <div class="card-header">
+                <h1>{hotel.Name}</h1>
+                <div class="price">
+                  <lightning-formatted-number value={hotel.Price__c} format-style="currency" currency-code="USD">
+                  </lightning-formatted-number>
+                </div>
+              </div>
+              <div class="display">
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label slds-m-right_none" for="default1">Person</label>
+                  <div class="slds-form-element__control">
+                    <button class="slds-button slds-button_icon slds-button_icon-small slds-input__button_decrement"
+                      onclick={handleDecrementPerson} title="Decrement counter">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#ban"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Decrement counter</span>
+                    </button>
+                    <input type="number" id="default1" placeholder="1" class="slds-input slds-input_counter"
+                      value={person} />
+                    <button class="slds-button slds-button_icon slds-button_icon-small slds-input__button_increment"
+                      onclick={handleIncrementPerson} title="Increment counter">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#new"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Increment counter</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label slds-m-right_none" for="default1">Room</label>
+                  <div class="slds-form-element__control">
+                    <button class="slds-button slds-button_icon slds-button_icon-small slds-input__button_decrement"
+                      onclick={handleDecrementRoom} title="Decrement counter">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#ban"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Decrement counter</span>
+                    </button>
+                    <input type="number" id="default2" placeholder="1" class="slds-input slds-input_counter"
+                      value={room} />
+                    <button class="slds-button slds-button_icon slds-button_icon-small slds-input__button_increment"
+                      onclick={handleIncrementRoom} title="Increment counter">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#new"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Increment counter</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="calendar">
+                <div class="dates">
+                  <lightning-input type="date" onchange={startDateHandler} name="input1" label="Start Date">
+                  </lightning-input>
+                  <lightning-input type="date" onchange={endDateHandler} name="input1" label="End Date">
+                  </lightning-input>
+                </div>
+              </div>
+              <div class="book">
+                <button onclick={resultHandler} class="btn">Show Total Price</button>
+                <button onclick={reserveHotelClick} data-id={hotel.Id} class="btn">Book Now</button>
+              </div>
+              <div class="total-price">
+                <lightning-formatted-number value={total} format-style="currency" currency-code="USD">
+                </lightning-formatted-number>
+              </div>
+            </div>
+          </div>
+        </lightning-layout-item>
+      </template>
+    </div>
+  </section>
+</template>

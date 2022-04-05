@@ -1,0 +1,157 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    height: 490px;
+    color: #575757;
+}
+
+.hotels {
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.hotel-card {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 2rem;
+}
+
+.hotel-image {
+    width: 20%;
+    height: 190px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.2);
+}
+
+.hotel-info {
+    width: 80%;
+    height: 200px;
+    background-color: #fdfdfd;
+    border-radius: 0rem 2rem 2rem 2rem;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    box-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+    border-bottom: 1px dotted black;
+    padding-bottom: 5px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding-top: 5px;
+    background: -webkit-repeating-linear-gradient(45deg, white, white 0.9rem, #fdfdfd 0, #fdfdfd 1.8rem);
+    background: repeating-linear-gradient(45deg, white, white 0.9rem, #fdfdfd 0, #fdfdfd 1.8rem);
+    box-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.2) inset;
+    border-radius: 1rem;
+}
+
+.calendar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding-top: 5px;
+    flex-direction: column;
+    background: -webkit-repeating-linear-gradient(45deg, white, white 0.9rem, #fdfdfd 0, #fdfdfd 1.8rem);
+    background: repeating-linear-gradient(45deg, white, white 0.9rem, #fdfdfd 0, #fdfdfd 1.8rem);
+    box-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.2) inset;
+    border-radius: 1rem;
+}
+
+.slds-input_counter {
+    width: 240px;
+}
+
+.dates {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.count {
+    display: flex;
+    justify-content: center;
+}
+
+.book {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slds-notify_alert {
+    border-radius: 0.5rem;
+    color: white;
+    background-color: green;
+}
+
+.slds-alert_error {
+    border-radius: 0.5rem;
+    background-color: #dc143c;
+}
+
+.btn {
+    width: 150px;
+    padding: 5px 10px;
+    background: linear-gradient(#00b3b3, #008b8b);
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid #006464;
+    margin: 5px;
+    color: #edffff;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: linear-gradient(#149d9d, #107b7b);
+    color: white;
+}
+
+.total-price {
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+
+
+span {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+span:hover {
+    color: yellow;
+}

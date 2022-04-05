@@ -1,0 +1,26 @@
+<template>
+    <section>
+        <div class="hotels">
+            <template if:true={hotels}>
+                <template for:each={hotels.data} for:item="hotel">
+                    <lightning-layout-item key={hotel.Name}>
+                        <div class="hotel-card">
+                            <img src={hotel.Img__c} class="hotel-image">
+                            <div class="hotel-info">
+                                <h1>{hotel.Name}</h1>
+                                <h2><span>Price: </span>
+                                    <lightning-formatted-number value={hotel.Price__c} format-style="currency"
+                                        currency-code="USD"></lightning-formatted-number>
+                                </h2>
+                                <h2><span>Location: </span>{hotel.City__r.Name}</h2>
+                                <div class="card-footer">
+                                    <button onclick={hotelDetailsClick} data-id={hotel.Id}>See Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                </template>
+            </template>
+        </div>
+    </section>
+</template>

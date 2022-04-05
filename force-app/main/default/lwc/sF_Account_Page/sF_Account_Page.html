@@ -1,0 +1,21 @@
+<template>
+    <section>
+        <div class="account-info">
+            <h1>{name}</h1>
+            <div class="acctext">
+                <lightning-input label="Name" data-id="accName" value={name} readonly={editMode}></lightning-input>
+            </div>
+            <div class="acctext">
+                <lightning-input label="Phone Number" data-id="accPhone" value={phone} readonly={editMode}>
+                </lightning-input>
+            </div>
+            <div class="acctext">
+                <lightning-input label="Email" data-id="accEmail" value={email} readonly></lightning-input>
+            </div>
+            <div class="errorMessage" if:true={errorMessage}>
+                <h2>Please enter all information</h2>
+            </div>
+            <lightning-button label={changeButton} onclick={updateButton}></lightning-button>
+        </div>
+    </section>
+</template>

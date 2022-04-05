@@ -1,0 +1,69 @@
+section {
+  padding: 20px;
+}
+
+.city-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: 1px solid #e6e8fa;
+  margin: 20px auto;
+  width: 90%;
+  height: 170px;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 20px 5px rgba(54, 69, 79, 0.15), -5px -5px 20px 5px rgba(54, 69, 79, 0.12);
+  transition: 0.4s;
+}
+
+.city-card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 20px 10px rgba(54, 69, 79, 0.15),
+    -5px -5px 20px 10px rgba(54, 69, 79, 0.12);
+}
+
+.city-info {
+  position: relative;
+  width: 100%;
+  position: relative;
+  background-color: #006a4e;
+  color: white;
+  border-radius: 2rem;
+}
+
+.city-name {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #e6e8fa;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.city-name:hover {
+  color: #ffbf00;
+}
+
+.image {
+  width: 100%;
+  height: 168px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.60), transparent);
+  border-radius: 2rem;
+}
