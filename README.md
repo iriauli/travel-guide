@@ -2,13 +2,13 @@
 ### Salesforce Experience Cloud App
 
 ### Home Page
-<img src="https://user-images.githubusercontent.com/64141913/161824251-67f16963-d925-4d25-897f-5efc9e8cf6a4.png" width="125%">
+<img src="https://user-images.githubusercontent.com/64141913/161826176-b9f18cac-96c6-492a-824a-e2f364e7102d.jpg" width="100%">
 
 ### Bookings Page
-<img src="https://user-images.githubusercontent.com/64141913/161824263-8ff5da42-1f06-4ee4-9430-341ebc262cca.png" width="125%">
+<img src="https://user-images.githubusercontent.com/64141913/161826194-5d1873a8-f687-429f-bbc6-d6e75f76709c.jpg" width="100%">
 
 ### Schema Builder
-<img src="https://user-images.githubusercontent.com/64141913/161824266-28b830f8-bf38-4583-907a-66818144fb08.png" width="125%">
+<img src="https://user-images.githubusercontent.com/64141913/161826202-d0954ecf-e869-4a0f-97b0-babb8012832d.jpg" width="100%">
 
 # Salesforce DX Project: Next Steps
 
